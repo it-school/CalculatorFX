@@ -2,6 +2,14 @@ package sample;
 
 public class Calculator
 {
+    double number1;
+    double number2;
+    byte operation;
+    String result;
+    boolean isFirstCalculation;
+    private double memory;
+
+
     public double getNumber1() {
         return number1;
     }
@@ -34,16 +42,20 @@ public class Calculator
         this.result = result;
     }
 
-    double number1;
-    double number2;
-    byte operation;
-    String result;
+
+    public void setFirstCalculation(boolean isFirstCalculation)
+    { this.isFirstCalculation = isFirstCalculation;}
+
+    public boolean isFirstCalculation() {
+        return this.isFirstCalculation;
+    }
 
     public Calculator() {
         number1 = 0;
         number2 = 0;
         operation = 0;
         result = "0";
+        isFirstCalculation = true;
     }
 
     public void calculate()
@@ -74,5 +86,13 @@ public class Calculator
 
         result = result.endsWith("0")?result.substring(0,result.length()-2):result;
 
+    }
+
+    public double getMemory() {
+        return memory;
+    }
+
+    public void setMemory(double memory) {
+        this.memory = memory;
     }
 }
