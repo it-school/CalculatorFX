@@ -2,8 +2,9 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
 
@@ -16,29 +17,29 @@ public class Controller {
     private Calculator calculator;
     private boolean isSecondNumber;
 
-   public Controller() {
-       txtData = new TextField();
-       calculator = new Calculator();
-       isSecondNumber = false;
-   }
+    public Controller() {
+        txtData = new TextField();
+        calculator = new Calculator();
+        isSecondNumber = false;
+    }
 
     private String delZeroAtEnd(String input) // Delete last zero
     {
-        return input.endsWith("0")?input.substring(0,input.length()-2):input;
+        return input.endsWith("0") ? input.substring(0, input.length() - 2) : input;
     }
 //      new Alert(Alert.AlertType.CONFIRMATION, txtData.getText()).show();
 
 
     public void btnNumberClick(ActionEvent actionEvent) {
-       String btnText = ((Button)actionEvent.getSource()).getText();
-        txtData.setText(txtData.getText().equals("0") || (isSecondNumber == true)? btnText : txtData.getText()+btnText );
+        String btnText = ((Button) actionEvent.getSource()).getText();
+        txtData.setText(txtData.getText().equals("0") || (isSecondNumber == true) ? btnText : txtData.getText() + btnText);
         isSecondNumber = false;
         calculator.isFirstCalculation = true;
 
     }
 
     public void btnCommaClick(ActionEvent actionEvent) {
-        txtData.setText(txtData.getText() + (!txtData.getText().contains(".")?".":""));
+        txtData.setText(txtData.getText() + (!txtData.getText().contains(".") ? "." : ""));
         calculator.isFirstCalculation = true;
     }
 
@@ -49,60 +50,63 @@ public class Controller {
 
     public void btnSignClick(ActionEvent actionEvent) {
 
-        txtData.setText(delZeroAtEnd(String.valueOf(-1*Double.parseDouble(txtData.getText()))));
+        txtData.setText(delZeroAtEnd(String.valueOf(-1 * Double.parseDouble(txtData.getText()))));
         calculator.isFirstCalculation = true;
     }
 
     public void btnPairOperationClick(ActionEvent actionEvent) {
-       try {
-           calculator.number1 = Double.parseDouble(txtData.getText());
-           switch (((Button)actionEvent.getSource()).getText())
-           {
-               case "+" : calculator.operation = 1;
+        try {
+            calculator.number1 = Double.parseDouble(txtData.getText());
+            switch (((Button) actionEvent.getSource()).getText()) {
+                case "+":
+                    calculator.operation = 1;
                     break;
-               case "-" : calculator.operation = 2;
-                   break;
-               case "*" : calculator.operation = 3;
-                   break;
-               case "/" : calculator.operation = 4;
-                   break;
-               case "x^y" : calculator.operation = 5;
-                   break;
-               case "√" : calculator.operation = 6;
-                          calculator.calculate();
-                          txtData.setText(delZeroAtEnd(calculator.result));
-                          //txtData.setAlignment(Pos.CENTER_LEFT);
-                   break;
-                   default:
-                       calculator.operation = 0;
-           }
-           isSecondNumber = true;
-           calculator.isFirstCalculation = true;
-           //txtData.setText("0");
-       }
-       catch (Exception ex)
-       {
-           txtData.setText("Number conversion error");
-       }
+                case "-":
+                    calculator.operation = 2;
+                    break;
+                case "*":
+                    calculator.operation = 3;
+                    break;
+                case "/":
+                    calculator.operation = 4;
+                    break;
+                case "x^y":
+                    calculator.operation = 5;
+                    break;
+                case "√":
+                    calculator.operation = 6;
+                    calculator.calculate();
+                    txtData.setText(delZeroAtEnd(calculator.result));
+                    //txtData.setAlignment(Pos.CENTER_LEFT);
+                    break;
+                default:
+                    calculator.operation = 0;
+            }
+            isSecondNumber = true;
+            calculator.isFirstCalculation = true;
+            //txtData.setText("0");
+        } catch (Exception ex) {
+            txtData.setText("Number conversion error");
+        }
 
-       }
+    }
 
     public void btnResultClick(ActionEvent actionEvent) {
 
         try {
-            calculator.number2 = Double.parseDouble(txtData.getText());
-        }
-        catch (Exception ex)
-        {
+            if (calculator.isFirstCalculation) {
+                calculator.number2 = Double.parseDouble(txtData.getText());
+            }
+        } catch (Exception ex) {
             txtData.setText("Number conversion error");
         }
 
         calculator.calculate();
-        if (calculator.isFirstCalculation) {
-            calculator.number1 = calculator.number2;
-            calculator.isFirstCalculation = false;
-        }
-            txtData.setText(delZeroAtEnd(calculator.result));
+        calculator.number1 = Double.parseDouble(calculator.result);
+        calculator.isFirstCalculation = false;
+
+        //txtData.setText(delZeroAtEnd(calculator.result));
+        txtData.setText(calculator.result);
     }
 
     public void btnMemoryClearClick(ActionEvent actionEvent) {
@@ -120,32 +124,28 @@ public class Controller {
         double memory = 0;
         try {
             memory = Double.parseDouble(txtData.getText());
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             txtData.setText("Number conversion error");
         }
-        calculator.setMemory(calculator.getMemory()+memory);
+        calculator.setMemory(calculator.getMemory() + memory);
         isSecondNumber = true;
-        labelMemory.setVisible(calculator.getMemory()!=0?true:false);
+        labelMemory.setVisible(calculator.getMemory() != 0 ? true : false);
     }
 
     public void btnMemorySubtractClick(ActionEvent actionEvent) {
         double memory = 0;
         try {
             memory = Double.parseDouble(txtData.getText());
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             txtData.setText("Number conversion error");
         }
-        calculator.setMemory(calculator.getMemory()-memory);
+        calculator.setMemory(calculator.getMemory() - memory);
         isSecondNumber = true;
-        labelMemory.setVisible(calculator.getMemory()!=0?true:false);
+        labelMemory.setVisible(calculator.getMemory() != 0 ? true : false);
     }
 
     public void buttonPressed(KeyEvent keyEvent) {
-        txtData.setText(txtData.getText() + (keyEvent.getText().contains("0")?keyEvent.getText():""));
+        txtData.setText(txtData.getText() + (keyEvent.getText().contains("0") ? keyEvent.getText() : ""));
         //
     }
 }

@@ -75,7 +75,7 @@ public class Calculator
                 result = number2 == 0? "Division by zero" : String.valueOf(number1 / number2);
                 break;
             case 5 :  // x^y
-                result = number2 == 0? "Division by zero" : String.valueOf(Math.pow(number1,  number2));
+                result = String.valueOf(Math.pow(number1,  number2));
                 break;
             case 6 : // √
                 result = number1 < 0? "No SQRT from negative" : String.valueOf(Math.sqrt(number1));
