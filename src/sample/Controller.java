@@ -29,13 +29,11 @@ public class Controller {
     }
 //      new Alert(Alert.AlertType.CONFIRMATION, txtData.getText()).show();
 
-
     public void btnNumberClick(ActionEvent actionEvent) {
         String btnText = ((Button) actionEvent.getSource()).getText();
         txtData.setText(txtData.getText().equals("0") || (isSecondNumber == true) ? btnText : txtData.getText() + btnText);
         isSecondNumber = false;
         calculator.isFirstCalculation = true;
-
     }
 
     public void btnCommaClick(ActionEvent actionEvent) {
