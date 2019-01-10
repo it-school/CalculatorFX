@@ -63,7 +63,7 @@ public class Calculator
         switch (operation)
         {
             case 1 :  // +
-                result = String.valueOf(number1 + number2);
+                result = String.valueOf(number1 + number2); // number1 + number 2 + "";
                 break;
             case 2 :  // -
                 result = String.valueOf(number1 - number2);
@@ -80,7 +80,7 @@ public class Calculator
             case 6 : // √
                 result = number1 < 0? "No SQRT from negative" : String.valueOf(Math.sqrt(number1));
                 break;
-                default:
+            default:
                     result = "Unknown operation";
         }
 

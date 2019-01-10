@@ -83,10 +83,13 @@ public class Controller {
             isSecondNumber = true;
             calculator.isFirstCalculation = true;
             //txtData.setText("0");
-        } catch (Exception ex) {
+        } catch (NumberFormatException ex)
+        {
             txtData.setText("Number conversion error");
+        } catch (Exception ex)
+        {
+            txtData.setText(ex.getMessage());
         }
-
     }
 
     public void btnResultClick(ActionEvent actionEvent) {
@@ -95,7 +98,8 @@ public class Controller {
             if (calculator.isFirstCalculation) {
                 calculator.number2 = Double.parseDouble(txtData.getText());
             }
-        } catch (Exception ex) {
+        } catch (NumberFormatException ex)
+        {
             txtData.setText("Number conversion error");
         }
 
@@ -122,8 +126,10 @@ public class Controller {
         double memory = 0;
         try {
             memory = Double.parseDouble(txtData.getText());
-        } catch (Exception ex) {
+        } catch (NumberFormatException ex)
+        {
             txtData.setText("Number conversion error");
+            return;
         }
         calculator.setMemory(calculator.getMemory() + memory);
         isSecondNumber = true;
