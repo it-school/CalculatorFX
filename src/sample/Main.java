@@ -13,6 +13,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Calculator");
         primaryStage.setScene(new Scene(root));
+        primaryStage.getScene().getStylesheets().add((getClass().getResource("css/style.css")).toExternalForm());  // CSS из внешнего файла
+        root.styleProperty().setValue("-fx-background-color: lightblue; -fx-background-radius: 10px; -fx-border-color: blue; -fx-border-radius: 10px; -fx-border-width: 10px;"); // CSS локально
         primaryStage.show();
     }
 
