@@ -9,6 +9,12 @@
   <children>
       <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="384.0" prefWidth="620.0" VBox.vgrow="ALWAYS">
          <children>
+             <TextField fx:id="txtData" alignment="CENTER_RIGHT" editable="false" layoutX="12.0" layoutY="10.0"
+                        prefHeight="107.0" prefWidth="596.0" text="0">
+                 <font>
+                     <Font size="50.0"/>
+                 </font>
+             </TextField>
              <Button fx:id="btn7" alignment="CENTER" layoutX="13.0" layoutY="129.0" mnemonicParsing="false"
                      onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
                      text="7">
@@ -94,28 +100,28 @@
                </font>
             </Button>
              <Button fx:id="btnPlus" alignment="CENTER" layoutX="214.0" layoutY="129.0" mnemonicParsing="false"
-                     onAction="#btnPairOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
+                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
                      text="+">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
              <Button fx:id="btnMinus" alignment="CENTER" layoutX="214.0" layoutY="189.0" mnemonicParsing="false"
-                     onAction="#btnPairOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
+                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
                      text="-">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
              <Button fx:id="btnMul" alignment="CENTER" layoutX="214.0" layoutY="249.0" mnemonicParsing="false"
-                     onAction="#btnPairOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
+                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
                      text="*">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
              <Button fx:id="btnDiv" alignment="CENTER" layoutX="213.0" layoutY="311.0" mnemonicParsing="false"
-                     onAction="#btnPairOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
+                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
                      text="/">
                <font>
                   <Font name="System Bold" size="16.0" />
@@ -129,14 +135,14 @@
                </font>
             </Button>
              <Button fx:id="btnSqrt" alignment="CENTER" layoutX="282.0" layoutY="189.0" mnemonicParsing="false"
-                     onAction="#btnPairOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
+                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
                      text="√">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
              <Button fx:id="btnPow" alignment="CENTER" layoutX="282.0" layoutY="249.0" mnemonicParsing="false"
-                     onAction="#btnPairOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
+                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
                      text="x^y">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -149,12 +155,6 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-             <TextField fx:id="txtData" alignment="CENTER_RIGHT" editable="false" layoutX="12.0" layoutY="10.0"
-                        prefHeight="107.0" prefWidth="596.0" text="0">
-               <font>
-                  <Font size="50.0" />
-               </font>
-            </TextField>
              <Button fx:id="btnMemoryClear" alignment="CENTER" layoutX="351.0" layoutY="129.0" mnemonicParsing="false"
                      onAction="#btnMemoryClearClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
                      text="MC">

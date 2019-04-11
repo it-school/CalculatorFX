@@ -14,7 +14,7 @@ public class Main extends Application {
         primaryStage.setTitle("Calculator");
         primaryStage.setScene(new Scene(root));
         primaryStage.getScene().getStylesheets().add((getClass().getResource("css/style.css")).toExternalForm());  // CSS из внешнего файла
-        root.styleProperty().setValue("-fx-background-color: lightblue; -fx-background-radius: 10px; -fx-border-color: blue; -fx-border-radius: 10px; -fx-border-width: 10px;"); // CSS локально
+        root.styleProperty().setValue("-fx-background-color: lightblue; -fx-background-radius: 20px; -fx-border-color: blue; -fx-border-radius: 20px; -fx-border-width: 5px;"); // CSS локально
         primaryStage.show();
     }
 

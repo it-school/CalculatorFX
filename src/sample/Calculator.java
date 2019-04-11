@@ -4,11 +4,10 @@ public class Calculator
 {
     double number1;
     double number2;
-    byte operation;
+    Operation operation;
     String result;
     boolean isFirstCalculation;
     private double memory;
-
 
     public double getNumber1() {
         return number1;
@@ -26,12 +25,18 @@ public class Calculator
         this.number2 = number2;
     }
 
-    public byte getOperation() {
-        return operation;
+    public Calculator()
+    {
+        number1 = 0;
+        number2 = 0;
+        operation = Operation.unassigned;
+        result = "0";
+        isFirstCalculation = true;
     }
 
-    public void setOperation(byte operation) {
-        this.operation = operation;
+    public Operation getOperation()
+    {
+        return operation;
     }
 
     public String getResult() {
@@ -50,42 +55,37 @@ public class Calculator
         return this.isFirstCalculation;
     }
 
-    public Calculator() {
-        number1 = 0;
-        number2 = 0;
-        operation = 0;
-        result = "0";
-        isFirstCalculation = true;
+    public void setOperation(Operation operation)
+    {
+        this.operation = operation;
     }
 
     public void calculate()
     {
         switch (operation)
         {
-            case 1 :  // +
+            case plus:  // +
                 result = String.valueOf(number1 + number2); // number1 + number 2 + "";
                 break;
-            case 2 :  // -
+            case minus:  // -
                 result = String.valueOf(number1 - number2);
                 break;
-            case 3 :  // *
+            case multiply:  // *
                 result = String.valueOf(number1 * number2);
                 break;
-            case 4 :  // /
+            case divide:   // /
                 result = number2 == 0? "Division by zero" : String.valueOf(number1 / number2);
                 break;
-            case 5 :  // x^y
+            case power:   // x^y
                 result = String.valueOf(Math.pow(number1,  number2));
                 break;
-            case 6 : // √
+            case sqrt:  // √
                 result = number1 < 0? "No SQRT from negative" : String.valueOf(Math.sqrt(number1));
                 break;
             default:
                     result = "Unknown operation";
         }
-
         result = result.endsWith("0")?result.substring(0,result.length()-2):result;
-
     }
 
     public double getMemory() {

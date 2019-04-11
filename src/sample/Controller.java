@@ -52,33 +52,34 @@ public class Controller {
         calculator.isFirstCalculation = true;
     }
 
-    public void btnPairOperationClick(ActionEvent actionEvent) {
+    public void btnOperationClick(ActionEvent actionEvent)
+    {
         try {
             calculator.number1 = Double.parseDouble(txtData.getText());
             switch (((Button) actionEvent.getSource()).getText()) {
                 case "+":
-                    calculator.operation = 1;
+                    calculator.operation = Operation.plus;
                     break;
                 case "-":
-                    calculator.operation = 2;
+                    calculator.operation = Operation.minus;
                     break;
                 case "*":
-                    calculator.operation = 3;
+                    calculator.operation = Operation.multiply;
                     break;
                 case "/":
-                    calculator.operation = 4;
+                    calculator.operation = Operation.divide;
                     break;
                 case "x^y":
-                    calculator.operation = 5;
+                    calculator.operation = Operation.power;
                     break;
                 case "√":
-                    calculator.operation = 6;
+                    calculator.operation = Operation.sqrt;
                     calculator.calculate();
                     txtData.setText(delZeroAtEnd(calculator.result));
                     //txtData.setAlignment(Pos.CENTER_LEFT);
                     break;
                 default:
-                    calculator.operation = 0;
+                    calculator.operation = Operation.unassigned;
             }
             isSecondNumber = true;
             calculator.isFirstCalculation = true;
