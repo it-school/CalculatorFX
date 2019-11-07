@@ -2,6 +2,7 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -23,66 +24,71 @@ public class Controller {
         isSecondNumber = false;
     }
 
-    private String delZeroAtEnd(String input) // Delete last zero
+    private String delZeroAtEnd(final String input) // Delete last zero
     {
-        return input.endsWith("0") ? input.substring(0, input.length() - 2) : input;
+        return input.endsWith(".0") ? input.substring(0, input.length() - 2) : input;
     }
 //      new Alert(Alert.AlertType.CONFIRMATION, txtData.getText()).show();
 
-    public void btnNumberClick(ActionEvent actionEvent) {
+    public void btnNumberClick(final ActionEvent actionEvent) {
         String btnText = ((Button) actionEvent.getSource()).getText();
         txtData.setText(txtData.getText().equals("0") || (isSecondNumber == true) ? btnText : txtData.getText() + btnText);
         isSecondNumber = false;
-        calculator.isFirstCalculation = true;
+        calculator.setFirstCalculation(true);
     }
 
-    public void btnCommaClick(ActionEvent actionEvent) {
-        txtData.setText(txtData.getText() + (!txtData.getText().contains(".") ? "." : ""));
-        calculator.isFirstCalculation = true;
+    public void btnCommaClick(final ActionEvent actionEvent) {
+/*
+        if (!txtData.getText().contains("."))
+            txtData.setText(txtData.getText() + "." );
+*/
+        txtData.setText(txtData.getText() + ((!txtData.getText().contains(".")) ? "." : ""));
+        calculator.setFirstCalculation(true);
     }
 
-    public void btnClearClick(ActionEvent actionEvent) {
+    public void btnClearClick(final ActionEvent actionEvent) {
         txtData.setText("0");
-        calculator.isFirstCalculation = true;
+        calculator.setFirstCalculation(true);
     }
 
-    public void btnSignClick(ActionEvent actionEvent) {
+    public void btnSignClick(final ActionEvent actionEvent) {
 
         txtData.setText(delZeroAtEnd(String.valueOf(-1 * Double.parseDouble(txtData.getText()))));
-        calculator.isFirstCalculation = true;
+        calculator.setFirstCalculation(true);
     }
 
-    public void btnOperationClick(ActionEvent actionEvent)
+    public void btnOperationClick(final ActionEvent actionEvent)
     {
         try {
-            calculator.number1 = Double.parseDouble(txtData.getText());
+            calculator.setNumber1(Double.parseDouble(txtData.getText()));
             switch (((Button) actionEvent.getSource()).getText()) {
                 case "+":
-                    calculator.operation = Operation.plus;
+                    calculator.setOperation(Operation.PLUS);
                     break;
                 case "-":
-                    calculator.operation = Operation.minus;
+                    calculator.setOperation(Operation.MINUS);
                     break;
                 case "*":
-                    calculator.operation = Operation.multiply;
+                    calculator.setOperation(Operation.MULTIPLY);
                     break;
                 case "/":
-                    calculator.operation = Operation.divide;
+                    calculator.setOperation(Operation.DIVIDE);
                     break;
                 case "x^y":
-                    calculator.operation = Operation.power;
+                    calculator.setOperation(Operation.POWER);
                     break;
                 case "√":
-                    calculator.operation = Operation.sqrt;
+                    calculator.setOperation(Operation.SQRT);
                     calculator.calculate();
-                    txtData.setText(delZeroAtEnd(calculator.result));
-                    //txtData.setAlignment(Pos.CENTER_LEFT);
+                    txtData.setText(delZeroAtEnd(calculator.getResult()));
+                    txtData.setAlignment(Pos.CENTER_RIGHT);
                     break;
                 default:
-                    calculator.operation = Operation.unassigned;
+                    calculator.setOperation(Operation.UNASSIGNED);
+                    break;
             }
             isSecondNumber = true;
-            calculator.isFirstCalculation = true;
+            calculator.setFirstCalculation(true);
             //txtData.setText("0");
         } catch (NumberFormatException ex)
         {
@@ -96,20 +102,19 @@ public class Controller {
     public void btnResultClick(ActionEvent actionEvent) {
 
         try {
-            if (calculator.isFirstCalculation) {
-                calculator.number2 = Double.parseDouble(txtData.getText());
-            }
+            if (calculator.isFirstCalculation())
+                calculator.setNumber2(Double.parseDouble(txtData.getText()));
         } catch (NumberFormatException ex)
         {
             txtData.setText("Number conversion error");
         }
 
         calculator.calculate();
-        calculator.number1 = Double.parseDouble(calculator.result);
-        calculator.isFirstCalculation = false;
+        calculator.setNumber1(Double.parseDouble(calculator.getResult()));
+        calculator.setFirstCalculation(false);
 
-        //txtData.setText(delZeroAtEnd(calculator.result));
-        txtData.setText(calculator.result);
+        txtData.setText(delZeroAtEnd(calculator.getResult()));
+        txtData.setText(calculator.getResult());
     }
 
     public void btnMemoryClearClick(ActionEvent actionEvent) {
@@ -134,7 +139,7 @@ public class Controller {
         }
         calculator.setMemory(calculator.getMemory() + memory);
         isSecondNumber = true;
-        labelMemory.setVisible(calculator.getMemory() != 0 ? true : false);
+        labelMemory.setVisible(calculator.getMemory() != 0);
     }
 
     public void btnMemorySubtractClick(ActionEvent actionEvent) {
@@ -146,7 +151,7 @@ public class Controller {
         }
         calculator.setMemory(calculator.getMemory() - memory);
         isSecondNumber = true;
-        labelMemory.setVisible(calculator.getMemory() != 0 ? true : false);
+        labelMemory.setVisible(calculator.getMemory() != 0);
     }
 
     public void buttonPressed(KeyEvent keyEvent) {
