@@ -9,16 +9,20 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
 
-public class Controller {
+public class Controller
+{
     @FXML
     public TextField txtData;
     @FXML
     private Label labelMemory;
 
-    private Calculator calculator;
+    private final Calculator calculator;
+    @FXML
+    private Button btnnn;
     private boolean isSecondNumber;
 
-    public Controller() {
+    public Controller()
+    {
         txtData = new TextField();
         calculator = new Calculator();
         isSecondNumber = false;

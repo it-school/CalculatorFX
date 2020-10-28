@@ -16,8 +16,9 @@ public class MainClass extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.getScene().getStylesheets().add(getClass().getResource("css/style.css").toExternalForm());  // CSS из внешнего файла
         primaryStage.setResizable(false);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-        root.styleProperty().setValue("-fx-background-color: lightblue; -fx-background-radius: 20px; -fx-border-color: blue; -fx-border-radius: 20px; -fx-border-width: 5px;"); // CSS локально
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
+        root.styleProperty().setValue("-fx-background-color: lightblue; -fx-background-radius: 30px; -fx-border-color: blue; -fx-border-radius: " +
+                                              "30px; -fx-border-width: 5px;"); // CSS локально
         primaryStage.show();
     }
 

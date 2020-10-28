@@ -4,189 +4,164 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.*?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="384.0" prefWidth="638.0"
-      style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171"
-      fx:controller="sample.Controller">
-  <children>
-      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="384.0" prefWidth="620.0" VBox.vgrow="ALWAYS">
-         <children>
-             <TextField fx:id="txtData" alignment="CENTER_RIGHT" editable="false" layoutX="12.0" layoutY="10.0"
-                        prefHeight="107.0" prefWidth="596.0" text="0">
-                 <font>
-                     <Font size="50.0"/>
-                 </font>
-             </TextField>
-             <Button fx:id="btn7" alignment="CENTER" layoutX="13.0" layoutY="129.0" mnemonicParsing="false"
-                     onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="7">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btn8" alignment="CENTER" layoutX="79.0" layoutY="129.0" mnemonicParsing="false"
-                     onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="8">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btn9" alignment="CENTER" layoutX="146.0" layoutY="129.0" mnemonicParsing="false"
-                     onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="9">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btn4" alignment="CENTER" layoutX="13.0" layoutY="189.0" mnemonicParsing="false"
-                     onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="4">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btn5" alignment="CENTER" layoutX="79.0" layoutY="189.0" mnemonicParsing="false"
-                     onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="5">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btn6" alignment="CENTER" layoutX="146.0" layoutY="189.0" mnemonicParsing="false"
-                     onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="6">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btn1" alignment="CENTER" layoutX="13.0" layoutY="249.0" mnemonicParsing="false"
-                     onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="1">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btn2" alignment="CENTER" layoutX="79.0" layoutY="249.0" mnemonicParsing="false"
-                     onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="2">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btn3" alignment="CENTER" layoutX="146.0" layoutY="249.0" mnemonicParsing="false"
-                     onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="3">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btn0" alignment="CENTER" layoutX="12.0" layoutY="311.0" mnemonicParsing="false"
-                     onAction="#btnNumberClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="0">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnComma" alignment="CENTER" layoutX="78.0" layoutY="311.0" mnemonicParsing="false"
-                     onAction="#btnCommaClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text=",">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnSign" alignment="CENTER" layoutX="145.0" layoutY="311.0" mnemonicParsing="false"
-                     onAction="#btnSignClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="+/-">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnPlus" alignment="CENTER" layoutX="214.0" layoutY="129.0" mnemonicParsing="false"
-                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="+">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnMinus" alignment="CENTER" layoutX="214.0" layoutY="189.0" mnemonicParsing="false"
-                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="-">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnMul" alignment="CENTER" layoutX="214.0" layoutY="249.0" mnemonicParsing="false"
-                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="*">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnDiv" alignment="CENTER" layoutX="214.0" layoutY="311.0" mnemonicParsing="false"
-                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="/">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnClear" alignment="CENTER" layoutX="282.0" layoutY="129.0" mnemonicParsing="false"
-                     onAction="#btnClearClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="C">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnSqrt" alignment="CENTER" layoutX="282.0" layoutY="189.0" mnemonicParsing="false"
-                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="√">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnPow" alignment="CENTER" layoutX="282.0" layoutY="249.0" mnemonicParsing="false"
-                     onAction="#btnOperationClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="x^y">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnResult" alignment="CENTER" layoutX="281.0" layoutY="311.0" mnemonicParsing="false"
-                     onAction="#btnResultClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="=">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnMemoryClear" alignment="CENTER" layoutX="351.0" layoutY="129.0" mnemonicParsing="false"
-                     onAction="#btnMemoryClearClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="MC">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnMemoryRead" alignment="CENTER" layoutX="351.0" layoutY="189.0" mnemonicParsing="false"
-                     onAction="#btnMemoryReadClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     style="-fx-rotate: 12;" text="MR">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnMemoryAdd" alignment="CENTER" layoutX="351.0" layoutY="249.0" mnemonicParsing="false"
-                     onAction="#btnMemeoryAddClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="M+">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-             <Button fx:id="btnMemorySubtact" alignment="CENTER" layoutX="350.0" layoutY="311.0" mnemonicParsing="false"
-                     onAction="#btnMemorySubtractClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0"
-                     text="M-">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-             <Label fx:id="labelMemory" layoutX="584.0" layoutY="18.0" prefHeight="24.0" prefWidth="22.0" text="M"
-                    visible="false"/>
-         </children>
-    </AnchorPane>
-  </children>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="384.0" prefWidth="630.0" style="-fx-background-color: transparent;"
+      xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="384.0" prefWidth="602.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TextField fx:id="txtData" alignment="CENTER_RIGHT" editable="false" layoutX="12.0" layoutY="10.0" prefHeight="107.0"
+                           prefWidth="596.0" text="0">
+                    <font>
+                        <Font size="50.0"/>
+                    </font>
+                </TextField>
+                <Button fx:id="btn7" alignment="CENTER" layoutX="13.0" layoutY="129.0" mnemonicParsing="false" onAction="#btnNumberClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="7">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btn8" alignment="CENTER" layoutX="79.0" layoutY="129.0" mnemonicParsing="false" onAction="#btnNumberClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="8">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btn9" alignment="CENTER" layoutX="146.0" layoutY="129.0" mnemonicParsing="false" onAction="#btnNumberClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="9">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btn4" alignment="CENTER" layoutX="13.0" layoutY="189.0" mnemonicParsing="false" onAction="#btnNumberClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="4">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btn5" alignment="CENTER" layoutX="79.0" layoutY="189.0" mnemonicParsing="false" onAction="#btnNumberClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="5">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btn6" alignment="CENTER" layoutX="146.0" layoutY="189.0" mnemonicParsing="false" onAction="#btnNumberClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="6">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btn1" alignment="CENTER" layoutX="13.0" layoutY="249.0" mnemonicParsing="false" onAction="#btnNumberClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="1">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btn2" alignment="CENTER" layoutX="79.0" layoutY="249.0" mnemonicParsing="false" onAction="#btnNumberClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="2">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btn3" alignment="CENTER" layoutX="146.0" layoutY="249.0" mnemonicParsing="false" onAction="#btnNumberClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="3">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btn0" alignment="CENTER" layoutX="12.0" layoutY="311.0" mnemonicParsing="false" onAction="#btnNumberClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="0">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnComma" alignment="CENTER" layoutX="78.0" layoutY="311.0" mnemonicParsing="false" onAction="#btnCommaClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text=",">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnSign" alignment="CENTER" layoutX="145.0" layoutY="311.0" mnemonicParsing="false" onAction="#btnSignClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="+/-">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnPlus" alignment="CENTER" layoutX="214.0" layoutY="129.0" mnemonicParsing="false" onAction="#btnOperationClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="+">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnMinus" alignment="CENTER" layoutX="214.0" layoutY="189.0" mnemonicParsing="false" onAction="#btnOperationClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="-">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnMul" alignment="CENTER" layoutX="214.0" layoutY="249.0" mnemonicParsing="false" onAction="#btnOperationClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="*">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnDiv" alignment="CENTER" layoutX="214.0" layoutY="311.0" mnemonicParsing="false" onAction="#btnOperationClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="/">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnClear" alignment="CENTER" layoutX="282.0" layoutY="129.0" mnemonicParsing="false" onAction="#btnClearClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="C">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnSqrt" alignment="CENTER" layoutX="282.0" layoutY="189.0" mnemonicParsing="false" onAction="#btnOperationClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="√">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnPow" alignment="CENTER" layoutX="282.0" layoutY="249.0" mnemonicParsing="false" onAction="#btnOperationClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="x^y">
+                    <font>
+                        <Font name="System Bold" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnResult" alignment="CENTER" layoutX="281.0" layoutY="311.0" mnemonicParsing="false" onAction="#btnResultClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="=">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnMemoryClear" alignment="CENTER" layoutX="351.0" layoutY="129.0" mnemonicParsing="false"
+                        onAction="#btnMemoryClearClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="MC">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnMemoryRead" alignment="CENTER" layoutX="351.0" layoutY="189.0" mnemonicParsing="false"
+                        onAction="#btnMemoryReadClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" rotate="-15.0"
+                        style="-fx-rotate: 12;" text="MR">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnMemoryAdd" alignment="CENTER" layoutX="351.0" layoutY="249.0" mnemonicParsing="false" onAction="#btnMemeoryAddClick"
+                        onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="M+">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnMemorySubtact" alignment="CENTER" layoutX="350.0" layoutY="311.0" mnemonicParsing="false"
+                        onAction="#btnMemorySubtractClick" onKeyPressed="#buttonPressed" prefHeight="50.0" prefWidth="50.0" text="M-">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </Button>
+                <Label fx:id="labelMemory" layoutX="584.0" layoutY="18.0" prefHeight="24.0" prefWidth="22.0" text="M" visible="false"/>
+            </children>
+        </AnchorPane>
+    </children>
 </VBox>
